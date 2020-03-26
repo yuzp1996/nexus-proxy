@@ -1,0 +1,16 @@
+steps:
+  - name: DockerBuild
+    parallel:
+      - name:  nexus-proxy
+        container: tools
+        groovy:
+          - |+
+            deploy.BuildMultiArchImage(
+               registry: "armharbor.alauda.cn",
+               dockerfile: "Dockerfile",
+               address: "armharbor.alauda.cn/alaudak8s/nexusproxy",
+               platforms:"linux/arm64",
+               push: true,
+               tag: "2.6.1",
+               armBuild: true,
+             )

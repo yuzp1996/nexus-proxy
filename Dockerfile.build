@@ -1,0 +1,5 @@
+# -- build
+FROM openjdk:8-jdk-slim AS builder
+COPY ./ /src/
+WORKDIR /src/
+RUN ./gradlew --info --no-daemon build

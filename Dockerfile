@@ -1,9 +1,3 @@
-# -- build
-FROM openjdk:8-jdk-slim AS builder
-COPY ./ /src/
-WORKDIR /src/
-RUN ./gradlew --info --no-daemon build
-
 # -- run
 FROM alpine:3.10
 
@@ -34,7 +28,8 @@ ENV UPSTREAM_DOCKER_PORT "5003"
 ENV UPSTREAM_HOST "localhost"
 ENV UPSTREAM_HTTP_PORT "8081"
 
-COPY --from=builder /src/build/libs/nexus-proxy-2.3.0.jar /nexus-proxy.jar
+
+COPY /nexus-proxy-2.3.0.jar /nexus-proxy.jar
 
 EXPOSE 8080
 EXPOSE 8443

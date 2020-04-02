@@ -29,7 +29,7 @@ ENV UPSTREAM_HOST "localhost"
 ENV UPSTREAM_HTTP_PORT "8081"
 
 
-COPY /build/libs/nexus-proxy-2.3.0.jar /nexus-proxy.jar
+COPY nexus-proxy-2.3.0.jar /nexus-proxy.jar
 
 EXPOSE 8080
 EXPOSE 8443

@@ -2,7 +2,7 @@ library "alauda-cicd"
 def language = "java"
 AlaudaPipeline {
     config = [
-        agent: 'java',
+        agent: 'harborbuild',
         folder: '.',
         sonar: [
             binding: "sonarqube",

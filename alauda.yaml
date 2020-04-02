@@ -5,6 +5,7 @@ steps:
         container: tools
         groovy:
           - |+
+            sh 'pwd && ls'
             sh './build.sh'
             deploy.BuildMultiArchImage(
                registry: "armharbor.alauda.cn",

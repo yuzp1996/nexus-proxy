@@ -1,4 +1,4 @@
-library "alauda-cicd-enable-get-multi-arch-image"
+library "alauda-cicd"
 def language = "java"
 AlaudaPipeline {
     config = [
